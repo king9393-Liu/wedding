@@ -52,12 +52,11 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Fully Transparent Nav */
         .glass-nav {
-            background: transparent;
-            backdrop-filter: none;
-            -webkit-backdrop-filter: none;
-            border-bottom: none;
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 163, 115, 0.15);
         }
 
         .glass-card {
@@ -131,36 +130,48 @@
             to { transform: rotate(360deg); }
         }
         .animate-spin-slow {
-            animation: spinSlow 8s linear infinite;
+            animation: spinSlow 6s linear infinite;
         }
     </style>
 </head>
 <body class="antialiased text-morandi-dark selection:bg-morandi-gold selection:text-white">
 
-    <nav class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+    <!-- 背景音樂 Audio 元素 -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="https://www.image2url.com/r2/default/audio/1790877060455-e6cb3f51-f01a-46f1-936f-3365f12e01ce.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- 右下角音樂播放控制按鈕 -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="music-toggle-btn" onclick="toggleMusic()" class="w-12 h-12 rounded-full glass-card border border-morandi-gold/40 shadow-lg flex items-center justify-center text-morandi-gold hover:bg-morandi-gold hover:text-white transition-all duration-300 focus:outline-none" aria-label="Toggle Music">
+            <i id="music-icon" class="fa-solid fa-music text-lg animate-spin-slow" style="animation-play-state: paused;"></i>
+        </button>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
-                <a href="#" class="font-english text-xl sm:text-2xl tracking-widest text-white font-semibold drop-shadow">
+                <a href="#" class="font-english text-xl sm:text-2xl tracking-widest text-morandi-dark font-semibold">
                     S <span class="text-morandi-gold">&amp;</span> Y
                 </a>
 
-                <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wider text-white drop-shadow">
+                <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wider text-morandi-dark">
                     <a href="#about" class="hover:text-morandi-gold transition-colors duration-200 py-1">
-                        關於我們 <span class="text-xs font-english block text-morandi-sand">ABOUT</span>
+                        關於我們 <span class="text-xs font-english block text-morandi-gold/70">ABOUT</span>
                     </a>
                     <a href="#gallery" class="hover:text-morandi-gold transition-colors duration-200 py-1">
-                        婚紗相簿 <span class="text-xs font-english block text-morandi-sand">GALLERY</span>
+                        婚紗相簿 <span class="text-xs font-english block text-morandi-gold/70">GALLERY</span>
                     </a>
                     <a href="#details" class="hover:text-morandi-gold transition-colors duration-200 py-1">
-                        婚禮資訊 <span class="text-xs font-english block text-morandi-sand">DETAILS</span>
+                        婚禮資訊 <span class="text-xs font-english block text-morandi-gold/70">DETAILS</span>
                     </a>
                     <a href="#rsvp" class="hover:text-morandi-gold transition-colors duration-200 py-1">
-                        出席回函 <span class="text-xs font-english block text-morandi-sand">RSVP</span>
+                        出席回函 <span class="text-xs font-english block text-morandi-gold/70">RSVP</span>
                     </a>
                 </div>
 
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="p-2 text-white hover:text-morandi-gold focus:outline-none" aria-label="Toggle Menu">
+                    <button id="mobile-menu-btn" class="p-2 text-morandi-dark hover:text-morandi-gold focus:outline-none" aria-label="Toggle Menu">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -343,7 +354,7 @@
                             <i class="fa-regular fa-calendar-check text-lg"></i>
                             <h4 class="font-bold tracking-wider text-morandi-dark">婚禮日期</h4>
                         </div>
-                        <p class="text-sm text-gray-700 pl-7">2026 年 12 月 26 日（星期六）</p>
+                        <p class="text-sm text-gray-700 pl-7"><span class="no-wrap">2026 年 12 月 26 日（星期六）</span></p>
                     </div>
 
                     <div class="space-y-2">
@@ -351,7 +362,7 @@
                             <i class="fa-regular fa-clock text-lg"></i>
                             <h4 class="font-bold tracking-wider text-morandi-dark">活動流程</h4>
                         </div>
-                        <p class="text-sm text-gray-700 pl-7">中午 12:00 入席</p>
+                        <p class="text-sm text-gray-700 pl-7"><span class="no-wrap">中午 12:00 入席</span></p>
                     </div>
                 </div>
 
@@ -370,7 +381,7 @@
                         <button class="accordion-header w-full px-5 py-3.5 text-left flex justify-between items-center hover:bg-morandi-sand/30 transition-colors">
                             <span class="text-sm font-semibold text-morandi-dark flex items-center gap-2">
                                 <i class="fa-solid fa-car text-morandi-sage"></i>
-                                自行開車指引
+                                <span class="no-wrap">自行開車指引</span>
                             </span>
                             <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300"></i>
                         </button>
@@ -385,7 +396,7 @@
                         <button class="accordion-header w-full px-5 py-3.5 text-left flex justify-between items-center hover:bg-morandi-sand/30 transition-colors">
                             <span class="text-sm font-semibold text-morandi-dark flex items-center gap-2">
                                 <i class="fa-solid fa-square-parking text-morandi-sage"></i>
-                                停車場資訊
+                                <span class="no-wrap">停車場資訊</span>
                             </span>
                             <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300"></i>
                         </button>
@@ -411,23 +422,23 @@
 
             <form id="wedding-rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSethBUP1I4uJ349eSjzdIURd1L1AnhJgpjhK7jm4WT_Hi8Z4w/formResponse" method="POST" target="hidden_iframe" class="glass-card rounded-2xl p-6 sm:p-10 space-y-6">
 
-                <!-- 姓名 NAME (entry.669660622) -->
+                <!-- 姓名 NAME -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         姓名 <span class="font-english text-morandi-gold font-normal">/ NAME</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="text" name="entry.669660622" required placeholder="請輸入您的姓名" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="text" name="entry.669660622" required placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
-                <!-- 電子信箱 EMAIL (entry.1196345624) -->
+                <!-- 電子信箱 EMAIL -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         電子信箱 <span class="font-english text-morandi-gold font-normal">/ EMAIL</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="email" name="entry.1196345624" required placeholder="example@email.com" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="email" name="entry.1196345624" required placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
-                <!-- 關係 RELATIONSHIP (entry.318963710) -->
+                <!-- 關係 RELATIONSHIP -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         您是哪方の親友 <span class="font-english text-morandi-gold font-normal">/ RELATIONSHIP</span> <span class="text-red-400">*</span>
@@ -436,13 +447,13 @@
                         <option value="" disabled selected>請選擇關係</option>
                         <option value="男方好友">男方好友</option>
                         <option value="女方好友">女方好友</option>
-                        <option value="男方家人親戚">男方親戚</option>
+                        <option value="男方親戚">男方親戚</option>
                         <option value="女方親戚">女方親戚</option>
                         <option value="共同好友">共同好友</option>
                     </select>
                 </div>
 
-                <!-- 參加人數 ATTENDANCE (entry.2104512796) -->
+                <!-- 參加人數 ATTENDANCE -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         參加午宴人數 <span class="font-english text-morandi-gold font-normal">/ ATTENDANCE COUNT</span> <span class="text-red-400">*</span>
@@ -463,43 +474,47 @@
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         請填寫預計出席人數 <span class="font-english text-morandi-gold font-normal">/ NUMBER OF GUESTS</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="number" id="custom-count-input" min="5" placeholder="例如：5" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="number" id="custom-count-input" min="5" placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
-                <!-- 飲食需求 DIETARY (entry.862491265) -->
-                <div class="space-y-2 pt-2 border-t border-morandi-gold/20">
-                    <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
-                        飲食需求 <span class="font-english text-morandi-gold font-normal">/ DIETARY REQUIREMENT</span>
-                    </label>
-                    <select id="dietary-select" name="entry.862491265" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark bg-white">
-                        <option value="葷食" selected>葷食</option>
-                        <option value="全素">全素</option>
-                        <option value="蛋奶素">蛋奶素</option>
-                    </select>
+                <!-- 智慧連動區塊：只有在大於 0 時才顯示 -->
+                <div id="conditional-attendance-fields" class="space-y-6 hidden pt-4 border-t border-morandi-gold/20">
+                    <!-- 飲食需求 DIETARY -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
+                            飲食需求 <span class="font-english text-morandi-gold font-normal">/ DIETARY REQUIREMENT</span>
+                        </label>
+                        <select id="dietary-select" name="entry.862491265" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark bg-white">
+                            <option value="葷食" selected>葷食</option>
+                            <option value="全素">全素</option>
+                            <option value="蛋奶素">蛋奶素</option>
+                        </select>
+                    </div>
+
+                    <!-- 素食餐點數量 -->
+                    <div id="veg-count-container" class="space-y-2 hidden">
+                        <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
+                            素食餐點數量 <span class="font-english text-morandi-gold font-normal">/ VEGETARIAN MEAL COUNT</span> <span class="text-red-400">*</span>
+                        </label>
+                        <input type="number" id="veg-count-input" name="entry.1523895720" min="1" placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    </div>
+
+                    <!-- 兒童座椅需求 CHILD SEAT -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
+                            是否需要兒童座椅 <span class="font-english text-morandi-gold font-normal">/ CHILD SEAT</span>
+                        </label>
+                        <select name="entry.459249911" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark bg-white">
+                            <option value="不需要" selected>不需要</option>
+                            <option value="一張">1 張</option>
+                            <option value="二張">2 張</option>
+                            <option value="三張">3 張</option>
+                            <option value="四張以上">4 張以上</option>
+                        </select>
+                    </div>
                 </div>
 
-                <!-- 素食餐點數量 (entry.1523895720) -->
-                <div id="veg-count-container" class="space-y-2 hidden">
-                    <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
-                        素食餐點數量 <span class="font-english text-morandi-gold font-normal">/ VEGETARIAN MEAL COUNT</span> <span class="text-red-400">*</span>
-                    </label>
-                    <input type="number" id="veg-count-input" name="entry.1523895720" min="1" placeholder="請填寫份數（例如：1）" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
-                </div>
-
-                <!-- 兒童座椅需求 CHILD SEAT (entry.459249911) -->
-                <div class="space-y-2">
-                    <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
-                        是否需要兒童座椅 <span class="font-english text-morandi-gold font-normal">/ CHILD SEAT</span>
-                    </label>
-                    <select id="child-seat-select" name="entry.459249911" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark bg-white">
-                        <option value="不需要" selected>不需要</option>
-                        <option value="一張">1 張</option>
-                        <option value="二張">2 張</option>
-                        <option value="三張">3 張</option>
-                    </select>
-                </div>
-
-                <!-- 喜帖郵寄 POSTAL INVITATION (entry.121576153) -->
+                <!-- 喜帖郵寄 POSTAL INVITATION -->
                 <div class="space-y-2 pt-2 border-t border-morandi-gold/20">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         是否需要紙本喜帖 <span class="font-english text-morandi-gold font-normal">/ POSTAL INVITATION</span> <span class="text-red-400">*</span>
@@ -511,20 +526,20 @@
                     </select>
                 </div>
 
-                <!-- 郵寄地址 MAILING ADDRESS (entry.217723437) -->
+                <!-- 郵寄地址 MAILING ADDRESS -->
                 <div id="address-field-container" class="space-y-2 hidden">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         郵寄地址 <span class="font-english text-morandi-gold font-normal">/ MAILING ADDRESS</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="text" id="address-input" name="entry.217723437" placeholder="請輸入郵遞區號與完整收件地址" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="text" id="address-input" name="entry.217723437" placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
-                <!-- 給新人的祝福 BLESSINGS (entry.1620831049) -->
+                <!-- 給新人的祝福 BLESSINGS -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         給新人的祝福 <span class="font-english text-morandi-gold font-normal">/ BLESSINGS</span>
                     </label>
-                    <textarea name="entry.1620831049" rows="3" placeholder="請寫下您想對士遠與瑜珊說的話..." class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark"></textarea>
+                    <textarea name="entry.1620831049" rows="3" placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark"></textarea>
                 </div>
 
                 <!-- Submit Button -->
@@ -538,19 +553,9 @@
 
     </main>
 
-    <div id="music-control" onclick="toggleMusic()" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-full shadow-lg border border-morandi-gold/30 cursor-pointer hover:scale-105 transition-all group">
-        <div id="music-disc" class="w-7 h-7 rounded-full bg-morandi-gold/20 text-morandi-gold flex items-center justify-center text-xs">
-            <i id="music-icon" class="fa-solid fa-music"></i>
-        </div>
-        <span id="music-text" class="text-xs font-medium text-morandi-dark tracking-wider">背景音樂</span>
-        <audio id="bg-music" loop preload="auto">
-            <source src="https://www.image2url.com/r2/default/audio/1790877060455-e6cb3f51-f01a-46f1-936f-3365f12e01ce.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-
     <footer class="py-12 bg-morandi-sand/40 border-t border-morandi-gold/15 text-center space-y-3">
         <p class="font-english text-2xl tracking-widest text-morandi-gold">S &amp; Y</p>
-        <p class="text-xs tracking-widest text-gray-500">2026.12.26 | 劉士遠 &amp; 粘瑜珊</p>
+        <p class="text-xs tracking-widest text-gray-500"><span class="no-wrap">2026.12.26 | 劉士遠 &amp; 粘瑜珊</span></p>
         <p class="text-[11px] text-gray-400 font-english">THANK YOU FOR BEING PART OF OUR SPECIAL DAY</p>
     </footer>
 
@@ -571,6 +576,40 @@
 
     <script>
         window.submitted = false;
+
+        // 音樂播放切換邏輯
+        function toggleMusic() {
+            const audio = document.getElementById('bg-audio');
+            const icon = document.getElementById('music-icon');
+            if (audio.paused) {
+                audio.play().then(() => {
+                    icon.style.animationPlayState = 'running';
+                    icon.classList.remove('fa-music');
+                    icon.classList.add('fa-compact-disc');
+                }).catch(e => {
+                    console.log("Audio autoplay restricted:", e);
+                });
+            } else {
+                audio.pause();
+                icon.style.animationPlayState = 'paused';
+                icon.classList.remove('fa-compact-disc');
+                icon.classList.add('fa-music');
+            }
+        }
+
+        // 第一次使用者與頁面互動時自動解鎖播放音樂
+        document.addEventListener('click', function musicAutoPlayUnlock() {
+            const audio = document.getElementById('bg-audio');
+            const icon = document.getElementById('music-icon');
+            if (audio.paused) {
+                audio.play().then(() => {
+                    icon.style.animationPlayState = 'running';
+                    icon.classList.remove('fa-music');
+                    icon.classList.add('fa-compact-disc');
+                }).catch(e => {});
+            }
+            document.removeEventListener('click', musicAutoPlayUnlock);
+        }, { once: true });
 
         document.addEventListener('DOMContentLoaded', function() {
             const iframe = document.getElementById('hidden_iframe');
@@ -635,24 +674,35 @@
                 });
             });
 
-            // RSVP Guest Count & Custom Count Logic
+            // Attendance Count & Conditional Sections Logic
             const attendanceSelect = document.getElementById('attendance-select');
             const customCountContainer = document.getElementById('custom-count-container');
             const customCountInput = document.getElementById('custom-count-input');
+            const conditionalFields = document.getElementById('conditional-attendance-fields');
 
             if (attendanceSelect) {
                 attendanceSelect.addEventListener('change', function() {
-                    if (this.value === 'custom') {
+                    const val = this.value;
+                    if (val === 'custom') {
                         customCountContainer.classList.remove('hidden');
                         customCountInput.required = true;
                         customCountInput.name = 'entry.2104512796';
                         attendanceSelect.removeAttribute('name');
+                        conditionalFields.classList.remove('hidden');
+                    } else if (val === '0') {
+                        customCountContainer.classList.add('hidden');
+                        customCountInput.required = false;
+                        customCountInput.value = '';
+                        customCountInput.removeAttribute('name');
+                        attendanceSelect.setAttribute('name', 'entry.2104512796');
+                        conditionalFields.classList.add('hidden');
                     } else {
                         customCountContainer.classList.add('hidden');
                         customCountInput.required = false;
                         customCountInput.value = '';
                         customCountInput.removeAttribute('name');
                         attendanceSelect.setAttribute('name', 'entry.2104512796');
+                        conditionalFields.classList.remove('hidden');
                     }
                 });
             }
@@ -716,7 +766,7 @@
                 });
             }
 
-            // Intersection Observer
+            // Intersection Observer for Animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -747,33 +797,6 @@
             }
         });
 
-        // Audio Toggle Function
-        function toggleMusic() {
-            const music = document.getElementById('bg-music');
-            const disc = document.getElementById('music-disc');
-            const icon = document.getElementById('music-icon');
-            const text = document.getElementById('music-text');
-
-            if (music.paused) {
-                music.play().then(() => {
-                    disc.classList.add('animate-spin-slow', 'bg-morandi-gold', 'text-white');
-                    disc.classList.remove('bg-morandi-gold/20', 'text-morandi-gold');
-                    icon.classList.remove('fa-music');
-                    icon.classList.add('fa-compact-disc');
-                    text.innerText = '播放中...';
-                }).catch(() => {
-                    text.innerText = '點擊播放';
-                });
-            } else {
-                music.pause();
-                disc.classList.remove('animate-spin-slow', 'bg-morandi-gold', 'text-white');
-                disc.classList.add('bg-morandi-gold/20', 'text-morandi-gold');
-                icon.classList.remove('fa-compact-disc');
-                icon.classList.add('fa-music');
-                text.innerText = '背景音樂';
-            }
-        }
-
         function showConfirmationModal() {
             const modal = document.getElementById('confirmation-modal');
             const modalBox = document.getElementById('modal-box');
@@ -787,6 +810,7 @@
             document.getElementById('address-field-container').classList.add('hidden');
             document.getElementById('custom-count-container').classList.add('hidden');
             document.getElementById('veg-count-container').classList.add('hidden');
+            document.getElementById('conditional-attendance-fields').classList.add('hidden');
             window.submitted = false;
         }
 
