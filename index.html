@@ -1,4 +1,4 @@
-< !DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -411,7 +411,7 @@
 
             <form id="wedding-rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSethBUP1I4uJ349eSjzdIURd1L1AnhJgpjhK7jm4WT_Hi8Z4w/formResponse" method="POST" target="hidden_iframe" class="glass-card rounded-2xl p-6 sm:p-10 space-y-6">
 
-                <!-- 姓名 NAME -->
+                <!-- 姓名 NAME (entry.669660622) -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         姓名 <span class="font-english text-morandi-gold font-normal">/ NAME</span> <span class="text-red-400">*</span>
@@ -419,7 +419,7 @@
                     <input type="text" name="entry.669660622" required placeholder="請輸入您的姓名" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
-                <!-- 電子信箱 EMAIL -->
+                <!-- 電子信箱 EMAIL (entry.1196345624) -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         電子信箱 <span class="font-english text-morandi-gold font-normal">/ EMAIL</span> <span class="text-red-400">*</span>
@@ -427,10 +427,10 @@
                     <input type="email" name="entry.1196345624" required placeholder="example@email.com" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
-                <!-- 關係 RELATIONSHIP -->
+                <!-- 關係 RELATIONSHIP (entry.318963710) -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
-                        您是哪方的親友 <span class="font-english text-morandi-gold font-normal">/ RELATIONSHIP</span> <span class="text-red-400">*</span>
+                        您是哪方の親友 <span class="font-english text-morandi-gold font-normal">/ RELATIONSHIP</span> <span class="text-red-400">*</span>
                     </label>
                     <select name="entry.318963710" required class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark bg-white">
                         <option value="" disabled selected>請選擇關係</option>
@@ -442,7 +442,7 @@
                     </select>
                 </div>
 
-                <!-- 參加人數 ATTENDANCE -->
+                <!-- 參加人數 ATTENDANCE (entry.2104512796) -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         參加午宴人數 <span class="font-english text-morandi-gold font-normal">/ ATTENDANCE COUNT</span> <span class="text-red-400">*</span>
@@ -466,7 +466,7 @@
                     <input type="number" id="custom-count-input" min="5" placeholder="例如：5" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
-                <!-- 飲食需求 DIETARY -->
+                <!-- 飲食需求 DIETARY (entry.862491265) -->
                 <div class="space-y-2 pt-2 border-t border-morandi-gold/20">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         飲食需求 <span class="font-english text-morandi-gold font-normal">/ DIETARY REQUIREMENT</span>
@@ -486,21 +486,20 @@
                     <input type="number" id="veg-count-input" name="entry.veg_count" min="1" placeholder="請填寫份數（例如：1）" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
-                <!-- 兒童座椅需求 CHILD SEAT (常駐顯示) -->
+                <!-- 兒童座椅需求 CHILD SEAT (entry.459249911) -->
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         是否需要兒童座椅 <span class="font-english text-morandi-gold font-normal">/ CHILD SEAT</span>
                     </label>
                     <select id="child-seat-select" name="entry.459249911" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark bg-white">
                         <option value="不需要" selected>不需要</option>
-                        <option value="1張">1 張</option>
-                        <option value="2張">2 張</option>
-                        <option value="3張">3 張</option>
-                    
+                        <option value="一張">1 張</option>
+                        <option value="二張">2 張</option>
+                        <option value="三張">3 張</option>
                     </select>
                 </div>
 
-                <!-- 喜帖郵寄 POSTAL INVITATION -->
+                <!-- 喜帖郵寄 POSTAL INVITATION (entry.121576153) -->
                 <div class="space-y-2 pt-2 border-t border-morandi-gold/20">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         是否需要紙本喜帖 <span class="font-english text-morandi-gold font-normal">/ POSTAL INVITATION</span> <span class="text-red-400">*</span>
@@ -512,12 +511,12 @@
                     </select>
                 </div>
 
-                <!-- 郵寄地址 MAILING ADDRESS (Conditional) -->
+                <!-- 郵寄地址 MAILING ADDRESS (entry.1620831049) -->
                 <div id="address-field-container" class="space-y-2 hidden">
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         郵寄地址 <span class="font-english text-morandi-gold font-normal">/ MAILING ADDRESS</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="text" id="address-input" name="entry.address" placeholder="請輸入郵遞區號與完整收件地址" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="text" id="address-input" name="entry.1620831049" placeholder="請輸入郵遞區號與完整收件地址" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
                 <!-- 給新人的祝福 BLESSINGS -->
@@ -646,10 +645,22 @@
                     if (this.value === 'custom') {
                         customCountContainer.classList.remove('hidden');
                         customCountInput.required = true;
+                        customCountInput.name = 'entry.2104512796';
+                        attendanceSelect.removeAttribute('name');
                     } else {
                         customCountContainer.classList.add('hidden');
                         customCountInput.required = false;
                         customCountInput.value = '';
+                        customCountInput.removeAttribute('name');
+                        attendanceSelect.setAttribute('name', 'entry.2104512796');
+                    }
+                });
+            }
+
+            if (customCountInput) {
+                customCountInput.addEventListener('input', function() {
+                    if (attendanceSelect.value === 'custom') {
+                        this.value = this.value.replace(/[^0-9]/g, '');
                     }
                 });
             }
@@ -694,6 +705,13 @@
             const rsvpForm = document.getElementById('wedding-rsvp-form');
             if (rsvpForm) {
                 rsvpForm.addEventListener('submit', function() {
+                    if (attendanceSelect.value === 'custom') {
+                        customCountInput.name = 'entry.2104512796';
+                        attendanceSelect.removeAttribute('name');
+                    } else {
+                        attendanceSelect.setAttribute('name', 'entry.2104512796');
+                        customCountInput.removeAttribute('name');
+                    }
                     window.submitted = true;
                 });
             }
