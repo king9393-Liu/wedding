@@ -148,6 +148,7 @@
         </button>
     </div>
 
+    <!-- 導覽列 -->
     <nav class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
@@ -194,6 +195,7 @@
         </div>
     </nav>
 
+    <!-- 主視覺 Banner -->
     <header class="relative w-full h-screen min-h-[600px] hero-bg flex items-center justify-center text-center text-white px-4">
         <div class="relative z-10 max-w-3xl mx-auto space-y-6">
             <p class="font-english tracking-[0.3em] text-lg sm:text-xl md:text-2xl uppercase text-morandi-sand opacity-90 font-light">
@@ -226,6 +228,7 @@
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-24">
 
+        <!-- 倒數計時區塊 -->
         <section id="countdown" class="fade-in-section text-center py-6">
             <h2 class="font-english text-3xl sm:text-4xl text-morandi-gold tracking-widest mb-2">COUNTDOWN</h2>
             <p class="text-sm sm:text-base text-gray-500 tracking-wider mb-8">倒數迎向美好的幸福時刻</p>
@@ -257,6 +260,7 @@
             </div>
         </section>
 
+        <!-- 關於我們區塊 -->
         <section id="about" class="fade-in-section space-y-12">
             <div class="text-center space-y-2">
                 <span class="font-english text-morandi-gold text-sm tracking-[0.3em] uppercase">Our Story</span>
@@ -295,6 +299,7 @@
             </div>
         </section>
 
+        <!-- 婚紗相簿區塊 -->
         <section id="gallery" class="fade-in-section space-y-10">
             <div class="text-center space-y-2">
                 <span class="font-english text-morandi-gold text-sm tracking-[0.3em] uppercase">Memories</span>
@@ -303,43 +308,56 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div class="glass-card rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="aspect-[4/3] overflow-hidden">
+                <div class="glass-card rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer" onclick="openLightbox('https://cdn.phototourl.com/member/2026-09-30-d1a5890a-7bf6-475c-b4a2-df194b4a4c28.jpg')">
+                    <div class="aspect-[4/3] overflow-hidden relative">
                         <img src="https://cdn.phototourl.com/member/2026-09-30-d1a5890a-7bf6-475c-b4a2-df194b4a4c28.jpg" 
                              alt="婚紗照 1" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="aspect-[4/3] overflow-hidden">
+                <div class="glass-card rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer" onclick="openLightbox('https://cdn.phototourl.com/member/2026-09-30-1fdecaf0-e895-4eef-960f-8bc35413cc42.jpg')">
+                    <div class="aspect-[4/3] overflow-hidden relative">
                         <img src="https://cdn.phototourl.com/member/2026-09-30-1fdecaf0-e895-4eef-960f-8bc35413cc42.jpg" 
                              alt="婚紗照 2" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                              onerror="this.src='https://placehold.co/800x600/f4ede4/8da399?text=Wedding+Photo+2'">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="aspect-[4/3] overflow-hidden">
+                <div class="glass-card rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer" onclick="openLightbox('https://cdn.phototourl.com/member/2026-09-30-4fa4d576-4901-4790-9bb1-0f4b9c59b9bc.jpg')">
+                    <div class="aspect-[4/3] overflow-hidden relative">
                         <img src="https://cdn.phototourl.com/member/2026-09-30-4fa4d576-4901-4790-9bb1-0f4b9c59b9bc.jpg" 
                              alt="婚紗照 3" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                              onerror="this.src='https://placehold.co/800x600/f4ede4/d4a373?text=Wedding+Photo+3'">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="aspect-[4/3] overflow-hidden">
+                <div class="glass-card rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer" onclick="openLightbox('https://cdn.phototourl.com/member/2026-09-30-6732da7e-c832-4659-bc42-af8e882cf292.jpg')">
+                    <div class="aspect-[4/3] overflow-hidden relative">
                         <img src="https://cdn.phototourl.com/member/2026-09-30-6732da7e-c832-4659-bc42-af8e882cf292.jpg" 
                              alt="婚紗照 4" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                              onerror="this.src='https://placehold.co/800x600/f4ede4/8da399?text=Wedding+Photo+4'">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 婚禮資訊區塊 -->
         <section id="details" class="fade-in-section space-y-10">
             <div class="text-center space-y-2">
                 <span class="font-english text-morandi-gold text-sm tracking-[0.3em] uppercase">Wedding Details</span>
@@ -349,15 +367,20 @@
 
             <div class="glass-card rounded-2xl p-6 sm:p-10 space-y-8">
                 <div class="grid sm:grid-cols-2 gap-6 pb-8 border-b border-morandi-gold/20">
-                    <div class="space-y-2">
+                    <div class="space-y-3">
                         <div class="flex items-center space-x-3 text-morandi-gold">
                             <i class="fa-regular fa-calendar-check text-lg"></i>
                             <h4 class="font-bold tracking-wider text-morandi-dark">婚禮日期</h4>
                         </div>
                         <p class="text-sm text-gray-700 pl-7"><span class="no-wrap">2026 年 12 月 26 日（星期六）</span></p>
+                        <div class="pl-7 pt-1">
+                            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%8A%89%E5%A3%AB%E9%81%A0%20%26%20%E粘%E7%91%9C%E7%8F%8A%20%E5%A9%9A%E7%A6%AE%E5%8D%88%E5%AE%B4&dates=20261226T040000Z/20261226T070000Z&details=%E8%AA%A0%E6%96%A5%E4%BB%98%E6%82%A8%E7%9A%84%E8%88%9B%E8%87%A8%E8%88%87%E7%A5%9D%E7%A6%8F%EF%BC%81&location=%E4%BA%8C%E9%B9%BF%E4%BA%AC%E8%8F%AF%E5%96%9C%E5%AE%B4%E6%9C%83%E9%A4%A8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-morandi-accent hover:underline font-medium">
+                                <i class="fa-regular fa-calendar-plus"></i> 加到 Google 行事曆
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="space-y-2">
+                    <div class="space-y-3">
                         <div class="flex items-center space-x-3 text-morandi-gold">
                             <i class="fa-regular fa-clock text-lg"></i>
                             <h4 class="font-bold tracking-wider text-morandi-dark">活動流程</h4>
@@ -372,9 +395,15 @@
                         <span>交通指引與會場資訊</span>
                     </h4>
 
-                    <div class="pl-7 space-y-1 mb-4">
-                        <p class="font-bold text-morandi-dark"><span class="no-wrap">二鹿京華喜宴會館（二鹿廳）</span></p>
+                    <div class="pl-7 space-y-2 mb-4">
+                        <p class="font-bold text-morandi-dark text-base"><span class="no-wrap">二鹿京華喜宴會館（二鹿廳）</span></p>
                         <p class="text-xs sm:text-sm text-gray-600"><span class="no-wrap">彰化縣福興鄉彰鹿路六段728號</span></p>
+                        <div class="pt-2">
+                            <a href="https://maps.google.com/?cid=6614032700221638275" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-morandi-gold/10 text-morandi-dark hover:bg-morandi-gold hover:text-white transition-all rounded-lg text-xs font-medium border border-morandi-gold/30">
+                                <i class="fa-solid fa-map-location-dot text-morandi-gold"></i>
+                                <span>開啟 Google 地圖導航</span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="border border-morandi-gold/20 rounded-xl overflow-hidden bg-white/60">
@@ -410,6 +439,7 @@
             </div>
         </section>
 
+        <!-- 出席回函 RSVP 區塊 -->
         <section id="rsvp" class="fade-in-section space-y-8">
             <div class="text-center space-y-2">
                 <span class="font-english text-morandi-gold text-sm tracking-[0.3em] uppercase">RSVP Form</span>
@@ -427,7 +457,7 @@
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         姓名 <span class="font-english text-morandi-gold font-normal">/ NAME</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="text" name="entry.669660622" required placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="text" name="entry.669660622" required placeholder="請輸入姓名" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
                 <!-- 電子信箱 EMAIL -->
@@ -435,7 +465,7 @@
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         電子信箱 <span class="font-english text-morandi-gold font-normal">/ EMAIL</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="email" name="entry.1196345624" required placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="email" name="entry.1196345624" required placeholder="example@email.com" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
                 <!-- 關係 RELATIONSHIP -->
@@ -474,7 +504,7 @@
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         請填寫預計出席人數 <span class="font-english text-morandi-gold font-normal">/ NUMBER OF GUESTS</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="number" id="custom-count-input" min="5" placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="number" id="custom-count-input" min="5" placeholder="請填寫人數" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
                 <!-- 智慧連動區塊：只有在大於 0 時才顯示 -->
@@ -486,8 +516,7 @@
                         </label>
                         <select id="dietary-select" name="entry.862491265" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark bg-white">
                             <option value="葷食" selected>葷食</option>
-                            <option value="全素">全素</option>
-                            <option value="蛋奶素">蛋奶素</option>
+                            <option value="素食">素食</option>
                         </select>
                     </div>
 
@@ -496,7 +525,7 @@
                         <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                             素食餐點數量 <span class="font-english text-morandi-gold font-normal">/ VEGETARIAN MEAL COUNT</span> <span class="text-red-400">*</span>
                         </label>
-                        <input type="number" id="veg-count-input" name="entry.1523895720" min="1" placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                        <input type="number" id="veg-count-input" name="entry.1523895720" min="1" placeholder="請填寫份數" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                     </div>
 
                     <!-- 兒童座椅需求 CHILD SEAT -->
@@ -509,7 +538,6 @@
                             <option value="一張">1 張</option>
                             <option value="二張">2 張</option>
                             <option value="三張">3 張</option>
-                            <option value="四張以上">4 張以上</option>
                         </select>
                     </div>
                 </div>
@@ -531,7 +559,7 @@
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         郵寄地址 <span class="font-english text-morandi-gold font-normal">/ MAILING ADDRESS</span> <span class="text-red-400">*</span>
                     </label>
-                    <input type="text" id="address-input" name="entry.217723437" placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
+                    <input type="text" id="address-input" name="entry.217723437" placeholder="請填寫完整郵寄地址" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark">
                 </div>
 
                 <!-- 給新人的祝福 BLESSINGS -->
@@ -539,7 +567,7 @@
                     <label class="block text-xs font-semibold tracking-wider text-morandi-dark uppercase">
                         給新人的祝福 <span class="font-english text-morandi-gold font-normal">/ BLESSINGS</span>
                     </label>
-                    <textarea name="entry.1620831049" rows="3" placeholder="" class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark"></textarea>
+                    <textarea name="entry.1620831049" rows="3" placeholder="留下想對士遠與瑜珊說的話..." class="custom-input w-full px-4 py-3 rounded-xl text-sm text-morandi-dark"></textarea>
                 </div>
 
                 <!-- Submit Button -->
@@ -559,6 +587,7 @@
         <p class="text-[11px] text-gray-400 font-english">THANK YOU FOR BEING PART OF OUR SPECIAL DAY</p>
     </footer>
 
+    <!-- 送出成功 Modal -->
     <div id="confirmation-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="glass-card rounded-2xl p-8 max-w-sm w-full text-center space-y-5 transform scale-90 transition-transform duration-300" id="modal-box">
             <div class="w-16 h-16 bg-morandi-sage/20 text-morandi-sage rounded-full flex items-center justify-center mx-auto text-2xl">
@@ -570,6 +599,16 @@
             </p>
             <button onclick="closeConfirmationModal()" class="w-full py-2.5 bg-morandi-gold text-white text-xs tracking-widest rounded-xl hover:bg-morandi-accent transition-colors">
                 關閉視窗 / CLOSE
+            </button>
+        </div>
+    </div>
+
+    <!-- 相片全螢幕預覽 Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeLightbox()">
+        <div class="relative max-w-4xl w-full max-h-[90vh] flex items-center justify-center">
+            <img id="lightbox-img" src="" alt="婚紗照預覽" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
+            <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white hover:text-morandi-gold text-2xl font-bold focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
     </div>
@@ -597,7 +636,7 @@
             }
         }
 
-        // 第一次使用者與頁面互動時自動解鎖播放音樂
+        // 第一次點擊頁面時自動觸發音樂播放（順應瀏覽器 Autoplay 政策）
         document.addEventListener('click', function musicAutoPlayUnlock() {
             const audio = document.getElementById('bg-audio');
             const icon = document.getElementById('music-icon');
@@ -621,7 +660,7 @@
                 });
             }
 
-            // Countdown Timer Logic
+            // 倒數計時器 Logic
             const targetDate = new Date("2026-12-26T12:00:00").getTime();
 
             function updateCountdown() {
@@ -650,7 +689,7 @@
             updateCountdown();
             setInterval(updateCountdown, 1000);
 
-            // Accordions Logic
+            // 折疊選單 Accordions Logic
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             accordionHeaders.forEach(header => {
                 header.addEventListener('click', function() {
@@ -674,7 +713,7 @@
                 });
             });
 
-            // Attendance Count & Conditional Sections Logic
+            // 出席人數與動態欄位 Logic
             const attendanceSelect = document.getElementById('attendance-select');
             const customCountContainer = document.getElementById('custom-count-container');
             const customCountInput = document.getElementById('custom-count-input');
@@ -715,7 +754,7 @@
                 });
             }
 
-            // Postal Option Logic
+            // 紙本喜帖郵寄選擇 Logic
             const postalSelect = document.getElementById('postal-select');
             const addressContainer = document.getElementById('address-field-container');
             const addressInput = document.getElementById('address-input');
@@ -733,7 +772,7 @@
                 });
             }
 
-            // Dietary Option Logic
+            // 素食需求選擇 Logic
             const dietarySelect = document.getElementById('dietary-select');
             const vegCountContainer = document.getElementById('veg-count-container');
             const vegCountInput = document.getElementById('veg-count-input');
@@ -751,7 +790,7 @@
                 });
             }
 
-            // Form Submit Logic
+            // 表單提交 Logic
             const rsvpForm = document.getElementById('wedding-rsvp-form');
             if (rsvpForm) {
                 rsvpForm.addEventListener('submit', function() {
@@ -766,7 +805,7 @@
                 });
             }
 
-            // Intersection Observer for Animations
+            // Intersection Observer 動畫出現
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -779,7 +818,7 @@
                 observer.observe(section);
             });
 
-            // Mobile menu toggle
+            // 手機版選單 Toggle
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-nav-link');
@@ -822,6 +861,21 @@
             modal.classList.add('opacity-0', 'pointer-events-none');
             modalBox.classList.remove('scale-100');
             modalBox.classList.add('scale-90');
+        }
+
+        // 相片放大 Lightbox 邏輯
+        function openLightbox(src) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
         }
     </script>
 </body>
